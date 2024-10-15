@@ -1,3 +1,7 @@
+package src.main;
+import src.main.*;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         // Assignment 1: Adapter Pattern - Audio Player
@@ -61,20 +65,24 @@ public class Main {
         System.out.println();
 
         // Assignment 6: Flyweight Pattern - Character Rendering in a Text Editor
-        System.out.println("=== Assignment 6: Flyweight Pattern - Character Rendering in a Text Editor ===");
+        System.out.println("Assignment 6: Flyweight Pattern - Character Rendering in a Text Editor");
         TextEditor textEditor = new TextEditor();
-        textEditor.insertText("Hello Flyweight Pattern");
+        textEditor.addCharacter('H', "Arial", 12, 1, 1);
+        textEditor.addCharacter('e', "Arial", 12, 2, 1);
+        textEditor.addCharacter('l', "Arial", 12, 3, 1);
+        textEditor.addCharacter('l', "Arial", 12, 4, 1);
+        textEditor.addCharacter('o', "Arial", 12, 5, 1);
+
         textEditor.render();
-        System.out.println();
 
         // Assignment 7: Proxy Pattern - Online Learning Platform
-        System.out.println("=== Assignment 7: Proxy Pattern - Online Learning Platform ===");
-        OnlineCourse course = new OnlineCourse();
-        course.addVideoLecture(new ProxyVideoLecture("Intro to Design Patterns"));
-        course.addVideoLecture(new ProxyVideoLecture("Advanced Java Concepts"));
+        System.out.println("\nAssignment 7: Proxy Pattern - Online Learning Platform");
+        OnlineCourse onlineCourse = new OnlineCourse();
 
-        course.watchLecture(1);
-        course.watchLecture(0);
+        // Adding proxy video lectures
+        onlineCourse.addVideoLecture(new ProxyVideoLecture("Design Patterns Overview"));
+        onlineCourse.addVideoLecture(new ProxyVideoLecture("Adapter Pattern"));
+        onlineCourse.addVideoLecture(new ProxyVideoLecture("Proxy Pattern"));
     }
 }
-
+
